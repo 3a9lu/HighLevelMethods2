@@ -32,13 +32,19 @@ namespace Lab2
         // Преобразоание XML
         private void button2_Click(object sender, EventArgs e)
         {
-            if (Convert.ToString(textBox1.Text) == "")
-            {
-                MessageBox.Show("Откройте файл.", "Ошибка");
-                return;
-            }
             try
             {
+                if (Convert.ToString(textBox1.Text) == "")
+                {
+                    MessageBox.Show("Откройте файл.", "Ошибка");
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Ошибка с XML документом", "Ошибка");
+                    return;
+                }
+
                 dogs = serializable.deserialize(filepath);
                 for (int i = 0; i < dogs.dog.Count; ++i)
                 {
